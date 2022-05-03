@@ -10,4 +10,4 @@ Les algorithme qui affichent les tris nécessitent pygame : pip install pygame
 - sort_insertion.py : Tri par sort_insertion
 - sort_merge.py : Tri Fusion
 - sort_quicksort.py : Tri rapide
-- sort_selection.py : Tri par sélection
+- sort_selection.py : Tri par sélection 
