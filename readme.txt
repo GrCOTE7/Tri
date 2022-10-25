@@ -2,6 +2,9 @@
 * Implémentation des algorithmes de tri           *
 *-------------------------------------------------*
 
+1. Fonctions de tri
+-------------------
+
 Les algorithme qui affichent les tris nécessitent pygame : pip install pygame
 - chat.py : Trier des éléments non numériques
 - sort_bubble.py : Tri à bulle 
@@ -11,3 +14,6 @@ Les algorithme qui affichent les tris nécessitent pygame : pip install pygame
 - sort_merge.py : Tri Fusion
 - sort_quicksort.py : Tri rapide
 - sort_selection.py : Tri par sélection 
+
+2. Recherche dichotomique
+-------------------------
