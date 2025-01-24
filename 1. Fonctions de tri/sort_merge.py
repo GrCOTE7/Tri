@@ -5,6 +5,7 @@ import Display_graph
     Implémentation du tri par fusion
 """
 
+
 # Tri fusion sans affichage
 def sort_merge(l):
     n = len(l)
@@ -28,13 +29,14 @@ def sort_merge(l):
 
         while i < len(tab_left):
             l[k] = tab_left[i]
-            i+=1
-            k+=1
+            i += 1
+            k += 1
 
         while j < len(tab_right):
             l[k] = tab_right[j]
-            j+=1
-            k+=1
+            j += 1
+            k += 1
+
 
 # Tri fusion avec affichage
 def sort_merge_display(l, start=0, end=None):
@@ -63,23 +65,24 @@ def sort_merge_display(l, start=0, end=None):
 
         while i < len(tab_left):
             l[k] = tab_left[i]
-            i+=1
-            k+=1
+            i += 1
+            k += 1
 
         while j < len(tab_right):
             l[k] = tab_right[j]
-            j+=1
-            k+=1
+            j += 1
+            k += 1
         print(l)
         graph.drawGraph(l)
 
-if __name__ == "__main__":
-    #l = random.sample(range(0, 1000), 500)
-    #print(l)
-    #sort_merge(l)
-    #print(l)
 
-    graph = Display_graph.Display_graph('Merge sort', 1500, 600,  0.02, 0.5)
+if __name__ == "__main__":
+    # l = random.sample(range(0, 1000), 500)
+    # print(l)
+    # sort_merge(l)
+    # print(l)
+
+    graph = Display_graph.Display_graph("Merge sort", 1500, 600, 0.02, 0.5)
     l = random.sample(range(0, 1000), 500)
     print(l)
     sort_merge_display(l)

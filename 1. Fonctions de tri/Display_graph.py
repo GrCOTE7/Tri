@@ -8,6 +8,7 @@ import time
     Il faut installer la librairie pygame pour que cela fonctionne.
 """
 
+
 class Display_graph:
 
     color_red = (255, 0, 0)
@@ -30,32 +31,34 @@ class Display_graph:
         self.window_surface = pygame.display.set_mode(window_resolution)
 
     # Affichage de l'histogramme
-    def drawGraph(self, l, forSwap=False):        
+    def drawGraph(self, l, forSwap=False):
         n = len(l)
         recWidth = self.width / n
         ratioHeigt = self.height / max(l)
         self.window_surface.fill(Display_graph.color_white)
-        
+
         indx = 0
         for i in range(n):
-            rect = Rect(indx, self.height - l[i] * ratioHeigt, recWidth, l[i] * ratioHeigt)
+            rect = Rect(
+                indx, self.height - l[i] * ratioHeigt, recWidth, l[i] * ratioHeigt
+            )
             if i in self.swapInd:
                 pygame.draw.rect(self.window_surface, Display_graph.color_blue, rect)
             else:
                 pygame.draw.rect(self.window_surface, Display_graph.color_green, rect)
 
             indx += recWidth
-        
+
         pygame.display.flip()
         if forSwap:
             time.sleep(self.swap_time)
         else:
             time.sleep(self.pause_time)
 
-    # Gestion des deux valeurs a échanger pendant le tri  
+    # Gestion des deux valeurs a échanger pendant le tri
     def displaySwap(self, l, ind1, ind2):
         if ind1 != ind2:
-            self.setSwapInd([ind1,ind2])
+            self.setSwapInd([ind1, ind2])
             self.drawGraph(l, True)
             l[ind1], l[ind2] = l[ind2], l[ind1]
             self.drawGraph(l, True)
